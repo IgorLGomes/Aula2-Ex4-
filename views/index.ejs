@@ -1,0 +1,73 @@
+<%- include('partials/header.ejs') %>
+  <a href="produtos">
+      <div id="carouselExample" class="carousel slide" height="90vh" style="background-color: #FCFBF5;" data-bs-ride="carousel" data-bs-interval="3000"> <!-- Adicione data-bs-ride e data-bs-interval -->
+        <div class="carousel-inner" height="950h">
+          <div class="carousel-item active">
+            <div class="bg-image" style="background-image:url('/imgs/jaco.png'); height: 90vh; background-size:contain; background-position: center; background-repeat: no-repeat;"></div>
+          </div>
+          <div class="carousel-item" height="90vh">
+            <div class="bg-image" style="background-image:url('/imgs/colete.webp'); height: 90vh; background-size:contain; background-position: center; background-repeat: no-repeat;"></div>
+          </div>
+          <div class="carousel-item">
+            <div class="bg-image" style="background-image:url('/imgs/berma.webp'); height: 90vh; background-size:contain; background-position: center; background-repeat: no-repeat;"></div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+  </a>
+
+    <style>
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+        .popup-content {
+            background: white;
+            padding: 150px;
+            border-radius: 8px;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            border-radius: 10px;
+            top: 10px;
+            right: 10px;
+            background: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <button class="close-btn" id="closePopup" >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+              </svg>
+            </button>
+            <h2>Bem-vindo à Igoms</h2>
+            <p>Confira a nossa nova coleção.</p>
+            <a href="/produtos"><h5>Drop 2</h5></a>
+        </div>
+    </div>
+<%- include ('partials/footer.ejs') %>

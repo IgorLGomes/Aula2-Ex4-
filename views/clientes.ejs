@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="container pt-5">
+        <h1>Clientes</h1>
+        <div class="table-responsive pt-3 pb-5">
+            <table class="table table-striped table-bordered table-hover caption-top">
+                <caption>Todos Clientes</caption>
+                <thead class="table-dark ">
+                    <tr>
+                        <th></th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Endereço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% clientesLista.forEach(cliente=> { %>
+                        <tr>
+                            <td style="text-align: center;">
+                                <img src="/imgs/icon_user.png" alt="User Icon" width="25px" height="25px">
+                            </td>
+                            <td>
+                                <%= cliente.nome %>
+                            </td>
+                            <td>
+                                <%= cliente.cpf %>
+                            </td>
+                            <td>
+                                <%= cliente.endereco %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+
+<%- include('partials/footer.ejs') %>

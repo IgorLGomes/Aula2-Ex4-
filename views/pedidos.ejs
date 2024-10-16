@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="container pt-5">
+        <h1>Pedidos</h1>
+        <div class="table-responsive pt-3 pb-5">
+            <table class="table table-striped table-bordered table-hover caption-top">
+                <caption>Todos os Pedidos</caption>
+                <thead class="table-dark ">
+                    <tr>
+                        <th>ID do Pedido</th>
+                        <th>Valor final (+frete)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% pedidosLista.forEach(pedidos=> { %>
+                        <tr>
+                            <th scope="row">
+                                <%= pedidos.id %>
+                            </th>
+                            <td>
+                                R$<%= pedidos.valor %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+                  
+<%- include('partials/footer.ejs') %>

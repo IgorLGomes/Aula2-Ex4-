@@ -1,0 +1,64 @@
+<%- include('partials/header.ejs') %>
+
+    <div class="container pt-5">
+        <h1>Coleção</h1>
+        <div class="row">
+            <% produtosLista.slice(0, 3).forEach(produto => { %>
+              <div class="col">
+                <img src="/imgs/<%= produto.img %>" 
+                     data-hover="/imgs/<%= produto.hover %>" 
+                     data-original="/imgs/<%= produto.img %>" 
+                     class="img-fluid produto-img">
+                <div class="info">
+                  <h3><%= produto.nome %></h3>
+                  R$<%= produto.preço %>
+                </div>
+              </div>
+            <% }) %>
+        </div>
+        <div class="row pb-5">
+            <% produtosLista.slice(3).forEach(produto => { %>
+              <div class="col">
+                <img src="/imgs/<%= produto.img %>" data-hover="/imgs/<%= produto.hover %>" data-original="/imgs/<%= produto.img %>" class="img-fluid produto-img">
+                <div class="info">
+                  <h3><%= produto.nome %></h3>
+                  R$<%= produto.preço %>
+                </div>
+              </div>
+            <% }) %>
+        </div>
+          
+
+        <div class="table-responsive pt-3 pb-5">
+            <table class="table table-striped table-bordered table-hover caption-top">
+                <caption>Produtos disponíveis</caption>
+                <thead class="table-dark ">
+                    <tr>
+                        <th class="align-center"><h4>Peças</h4></th>
+                        <th><h4>Nome da peça</h4></th>
+                        <th><h4>Preço</h4></th>
+                        <th><h4>Categoria</h4></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% produtosLista.forEach(produto=> { %>
+                        <tr>
+                            <td class="d-flex justify-content-center">
+                                <img src="/imgs/<%= produto.img %>" style="height: 200px;">
+                            </td>
+                            <td class="align-middle">
+                                <%= produto.nome %>
+                            </td>
+                            <td class="align-middle">
+                                R$<%= produto.preço %>
+                            </td>
+                            <td class="align-middle">
+                                <%= produto.categoria %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+                  
+<%- include('partials/footer.ejs') %>
